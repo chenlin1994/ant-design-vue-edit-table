@@ -28,14 +28,34 @@
  *    7.插件可以为loader带来更多特性
  *    8.loader能够产生额外的任意文件
  *  plugins 插件
- *    webpack插件是一个具有apply属性的javascript对象 apply属性会被webpack compiler调用
+ *    webpack插件是一个具有apply属性的javascript对象 apply属性会被webpack compiler调用,并且compiler对象可在整个编译生命周期访问
+ *    由于插件可以携带参数/选项,必须在webpack配置中，向plugins属性传入new实例
+ *    使用webpack的多种方式
+ *    1.在wepback.config.js文件中指定plugins
  *  
  * plugins 用于执行范围更广的任务，插件的范围包括 从打包优化和压缩，一直到重新定义环境中的变量
  *    想要使用一个插件，只需要require它，然后把它添加到plugins数组中，多数插件可以通过选项option自定义，也可以在一个配置文件中因为不同目的而多次使用同一个插件
+ *  
  * mode模式  通过选择development或production之中的一个，来设置mode参数，可以启用相应模式下的webpack内置的优化
  *
- *
- *
- *
+ * 
+ * configuration配置
+ *    webpack的配置文件，是导出一个对象的javascript文件，次对象，由webpack根据对象定义的属性进行解析
+ * 因为webpack配置是标准的Node.js CommonJs模块
+ * 
+ * modules模块
+ * 什么是webpack模块
+ * 对比Nodejs模块，webpack模块能够以各种方式表达他们的依赖关系
+ * 
+ * module resolution
+ * resolve是一个库（library) 用于帮助找到模块的绝对路径
+ *  
+ * dependency graph
+ * 任何时候，一个文件依赖于了一个文件，webpack就把此视为文件之间有依赖关系
+ * 
+ * 构建目标
+ * 
+ * 模块热替换
+ * 
  *
  */

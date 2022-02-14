@@ -116,7 +116,7 @@ export default {
                 ? isNumber
                   ? Number(recourceObj[j].split(this.conChar)[i])
                   : recourceObj[j].split(this.conChar)[i]
-                : recourceObj[j].split(this.conChar)[i]
+                : recourceObj[j]?.split(this.conChar)[i]
           }
           this.selectedRows.push(obj)
         }
